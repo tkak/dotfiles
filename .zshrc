@@ -49,27 +49,27 @@ setopt extended_history
 # prompt setting
 #########################################
 #通常のプロンプト
-#PROMPT="%n%% " 
+PROMPT="%n%% " 
 #プロンプトの右側
-#RPROMPT="[%~]" 
+RPROMPT="[%~]" 
 #入力ミスを確認する場合に表示されるプロンプト
-#SPROMPT="%r is correct? [n,y,a,e]: " 
-case ${UID} in
-0)
-    PROMPT="%B%{^[[31m%}%/#%{^[[m%}%b "
-    PROMPT2="%B%{^[[31m%}%_#%{^[[m%}%b "
-    SPROMPT="%B%{^[[31m%}%r is correct? [n,y,a,e]:%{^[[m%}%b "
-    [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] && 
-        PROMPT="%{^[[37m%}${HOST%%.*} ${PROMPT}"
-    ;;
-*)
-    PROMPT="%{^[[31m%}%/%%%{^[[m%} "
-    PROMPT2="%{^[[31m%}%_%%%{^[[m%} "
-    SPROMPT="%{^[[31m%}%r is correct? [n,y,a,e]:%{^[[m%} "
-    [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] && 
-        PROMPT="%{^[[37m%}${HOST%%.*} ${PROMPT}"
-    ;;
-esac 
+SPROMPT="%r is correct? [n,y,a,e]: " 
+#case ${UID} in
+#0)
+#    PROMPT="%B%{^[[31m%}%/#%{^[[m%}%b "
+#    PROMPT2="%B%{^[[31m%}%_#%{^[[m%}%b "
+#    SPROMPT="%B%{^[[31m%}%r is correct? [n,y,a,e]:%{^[[m%}%b "
+#    [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] && 
+#        PROMPT="%{^[[37m%}${HOST%%.*} ${PROMPT}"
+#    ;;
+#*)
+#    PROMPT="%{^[[31m%}%/%%%{^[[m%} "
+#    PROMPT2="%{^[[31m%}%_%%%{^[[m%} "
+#    SPROMPT="%{^[[31m%}%r is correct? [n,y,a,e]:%{^[[m%} "
+#    [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] && 
+#        PROMPT="%{^[[37m%}${HOST%%.*} ${PROMPT}"
+#    ;;
+#esac 
 
 #########################################
 # color setting
@@ -95,9 +95,6 @@ setopt auto_param_keys
 
 # Keybind設定(emacs like)
 bindkey -e
-
-#for vim7.3
-alias vim='/usr/local/bin/vim'
 
 #rm -i
 alias rm='rm -i'
