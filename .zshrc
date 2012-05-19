@@ -83,7 +83,7 @@ case ${UID} in
     PROMPT="%{^[[37m%}${HOST%%.*} ${PROMPT}"
   ;;
 *)
-  PROMPT="%n@${HOST%%.*} %% " 
+  PROMPT="%n@${HOST%%.*}%% " 
   PROMPT2="%{^[[31m%}%_%%%{^[[m%} "
   RPROMPT="[%~]" 
   SPROMPT="%r is correct? [n,y,a,e]: " 
@@ -95,7 +95,8 @@ esac
 # カッコの対応などを自動的に補完
 setopt auto_param_keys
 
-# Keybind設定(emacs like)
+# Keybind configuration (emacs like)
+#
 bindkey -e
 
 #rm -i
