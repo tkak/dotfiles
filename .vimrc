@@ -95,4 +95,5 @@ let g:neocomplcache_enable_at_startup = 1 " 起動時に有効化
 " Most Recently Used (MRU)
 let MRU_Max_Entries=20
 let MRU_Window_Height=6
-
+" template
+autocmd BufNewFile *.sh 0r $HOME/.vim/templates/sh.txt
