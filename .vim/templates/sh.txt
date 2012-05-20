@@ -1,0 +1,5 @@
+#!/bin/sh
+# Name.sh
+# 
+# YYYY/MM/DD
+# by Takaaki Furukawa
