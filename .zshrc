@@ -99,8 +99,15 @@ setopt auto_param_keys
 #
 bindkey -e
 
-#rm -i
+# rm -i
 alias rm='rm -i'
+# ls
+alias ll='ls -l'
+alias la='ls -a'
+# df
+alias dh='df -h'
+# du
+alias dsh='du -sh'
 
 #補完候補一覧のカラー表示
 zstyle ':completion:*' list-colors 'di=36' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
