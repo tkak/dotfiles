@@ -1,8 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/Users/tkak/sandbox/gae/projects/tkakinfo.bak/media/design'
-let g:netrw_dirhist_2='/Users/tkak/sandbox/recipes'
-let g:netrw_dirhist_3='/Users/tkak/sandbox/tkak.github.com/_includes/themes/the-program'
-let g:netrw_dirhist_4='/Users/tkak/sandbox/tkak.github.com/server'
-let g:netrw_dirhist_5='/Users/tkak/sandbox/tkak.github.com/_posts'
-let g:netrw_dirhist_6='/Users/tkak/sandbox/tkak.github.com/_theme_packages/the-program/_includes/themes/the-program'

@@ -1,1 +1,0 @@
-twitvim-0.4.7.vba: call delete('/Users/takaaki/.vim/plugin/twitvim.vim')|call delete('/Users/takaaki/.vim/doc/twitvim.txt')
