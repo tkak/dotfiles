@@ -113,5 +113,4 @@ alias dsh='du -sh'
 zstyle ':completion:*' list-colors 'di=36' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm

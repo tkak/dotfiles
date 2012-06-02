@@ -71,3 +71,18 @@ let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
 let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
+
+function InsertTabWrapper()
+    if pumvisible()
+        return "\<c-n>"
+    endif
+    let col = col('.') - 1
+    if !col || getline('.')[col - 1] !~ '\k\|<\|/'
+        return "\<tab>"
+    elseif exists('&omnifunc') && &omnifunc == ''
+        return "\<c-n>"
+    else
+        return "\<c-x>\<c-o>"
+    endif
+endfunction
+inoremap <tab> <c-r>=InsertTabWrapper()<cr>

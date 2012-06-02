@@ -8,8 +8,8 @@ if has('vim_starting')
     call neobundle#rc(expand('~/.vim/bundle/'))
 endif
 
-NeoBundle 'git://github.com/Shougo/neocomplcache.git'
 NeoBundle 'git://github.com/Shougo/neobundle.vim.git'
+NeoBundle 'git://github.com/Shougo/neocomplcache.git'
 NeoBundle 'git://github.com/Shougo/unite.vim.git'
 NeoBundle 'yanktmp.vim'
 NeoBundle 'git://github.com/nathanaelkane/vim-indent-guides.git'
@@ -18,11 +18,6 @@ NeoBundle 'ref.vim'
 
 filetype plugin on
 filetype indent on
-
-inoremap { {}<Left>
-inoremap ' ''<Left>
-inoremap [ []<Left>
-inoremap ( ()<Left>
 " 挿入モード終了時に IME 状態を保存しない
 "inoremap <silent> <Esc> <Esc>
 "inoremap <silent> <C-[> <Esc>
@@ -35,6 +30,8 @@ set visualbell
 set encoding=utf8
 set backspace=indent,eol,start
 set showcmd
+set autoindent
+set smartindent
 
 " input setting
 " =============
@@ -42,12 +39,24 @@ set textwidth=80
 set paste
 set expandtab
 
+inoremap {} {}<Left>
+inoremap '' ''<Left>
+inoremap "" ""<Left>
+inoremap [] []<Left>
+inoremap () ()<Left>
+
+if filereadable(expand('~/.vim/neocomplcache.vimrc'))
+    source ~/.vim/neocomplcache.vimrc
+endif
+
+
 " search setting
 " ==============
 set history=100
 set ignorecase
 set smartcase
 set wrapscan
+set hlsearch
 
 " view setting
 " ============
@@ -58,19 +67,17 @@ set number
 set ruler
 set title
 
-if filereadable(expand('~/.vim/neocomplcache.vimrc'))
-    source ~/.vim/neocomplcache.vimrc
-endif
-
 " indent-guide
+" ============
 let g:indent_guides_enable_on_vim_startup = 1
-let g:indent_guides_color_change_percent = 30
+let g:indent_guides_color_change_percent = 20
 let g:indent_guides_guide_size = 2
 let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
 
 " template
+" ========
 augroup templates
     autocmd!
     autocmd BufNewFile *.sh 0r ~/.vim/templates/sh.txt
@@ -84,5 +91,6 @@ map <silent> sp :call YanktmpPaste_p()
 map <silent> sP :call YanktmpPaste_P()
 
 " vim-ref
+" =======
 let g:ref_alc_encoding = 'utf-8'
 let g:ref_alc_start_linenumber = 44
