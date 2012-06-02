@@ -1,5 +1,3 @@
 #!/bin/sh
-# Name.sh
-# 
-# YYYY/MM/DD
-# by Takaaki Furukawa
+# __DATE__
+# created by tkak
