@@ -1,99 +1,88 @@
-"======================================
-" basic setting
-"======================================
-" Use Vim settings, rather then Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
+" Neovundle setting
+" ==============
 set nocompatible
-" beep sound off
+filetype off
+
+if has('vim_starting')
+    set runtimepath+=~/.vim/bundle/neobundle.vim
+    call neobundle#rc(expand('~/.vim/bundle/'))
+endif
+
+NeoBundle 'git://github.com/Shougo/neocomplcache.git'
+NeoBundle 'git://github.com/Shougo/neobundle.vim.git'
+NeoBundle 'git://github.com/Shougo/unite.vim.git'
+NeoBundle 'yanktmp.vim'
+NeoBundle 'git://github.com/nathanaelkane/vim-indent-guides.git'
+NeoBundle 'git://github.com/altercation/vim-colors-solarized.git'
+NeoBundle 'ref.vim'
+
+filetype plugin on
+filetype indent on
+
+inoremap { {}<Left>
+inoremap ' ''<Left>
+inoremap [ []<Left>
+inoremap ( ()<Left>
+" 挿入モード終了時に IME 状態を保存しない
+"inoremap <silent> <Esc> <Esc>
+"inoremap <silent> <C-[> <Esc>
+" 「日本語入力固定モード」切り替えキー
+"inoremap <silent> <C-j> <C-^>
+
+" basic setting
+" =============
 set visualbell
-" encoding
 set encoding=utf8
-" backspaceで何でも消せるように
 set backspace=indent,eol,start
-" display incomplete command
 set showcmd
 
-"======================================
-" inent setting
-"======================================
-" max of width
+" input setting
+" =============
 set textwidth=80
-" コピーした時のオートインデントを無効にする
 set paste
-" tabを入力した時の半角スペースの個数
-set softtabstop=4
-" tab -> space
 set expandtab
-" auto indent
-set autoindent
-set smartindent
-" 自動インデントの各段階に使われるスペースの個数
-set shiftwidth=4
-" コマンドライン補完が拡張モードで行われる
-set wildmenu
-" comment template
-set commentstring=\ #\ %s
-" すべての折畳を閉じた状態でファイルオープン
-set foldlevel=0
-" fileformat auto recognize
-set fileformats=unix,dos,mac
 
-"======================================
-" scan setting
-"======================================
+" search setting
+" ==============
 set history=100
-" 検索で大文字と小文字を区別しない。
 set ignorecase
 set smartcase
 set wrapscan
-" Do not increment search
-"set noincsearch
-" インクリメンタル検索ができるようになる。
-set incsearch
 
-"======================================
 " view setting
-"======================================
-" syntax highlight setting in ~/.vim/syntax
-" 
-syntax on
-" colorscheme setting in ~/.vim/colors
-" colorscheme desert
-colorscheme pyte
-" colorscheme django
-" colorscheme tidy
-" colorscheme wombat
-" colorscheme kate
-let g:molokai_original = 1
-" display line numbers on left side
+" ============
+syntax enable
+set background=dark
+colorscheme solarized
 set number
-" カーソルの場所を表示する
 set ruler
-highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=white
-match ZenkakuSpace /　/
-set scrolloff=5
-" show the filename in the window titlebar
 set title
-" 検索結果文字列のハイライトを有効にする
-set hlsearch
-" ステータスラインに表示する情報の指定
-set statusline=%n\:%y%F\ \|%{(&fenc!=''?&fenc:&enc).'\|'.&ff.'\|'}%m%r%=<%l/%L:%p%%>
-" ステータスラインの色
-highlight StatusLine   term=NONE cterm=NONE ctermfg=black ctermbg=white
 
-"======================================
-" plugin setting
-"======================================
-" ftplugin
-filetype on
-filetype plugin on
-" vimshell
-"let g:VimShell_EnableInteractive = 1
-" neocomplcache
-let g:neocomplcache_enable_at_startup = 1 " 起動時に有効化
+if filereadable(expand('~/.vim/neocomplcache.vimrc'))
+    source ~/.vim/neocomplcache.vimrc
+endif
 
-" Most Recently Used (MRU)
-let MRU_Max_Entries=20
-let MRU_Window_Height=6
+" indent-guide
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_color_change_percent = 30
+let g:indent_guides_guide_size = 2
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
+
 " template
-autocmd BufNewFile *.sh 0r $HOME/.vim/templates/sh.txt
+augroup templates
+    autocmd!
+    autocmd BufNewFile *.sh 0r ~/.vim/templates/sh.txt
+    autocmd BufNewFile *.sh %substitute#__DATE__#\=strftime('%Y-%m-%d')#ge
+augroup END
+
+" yanktmp setting
+" ===============
+map <silent> sy :call YanktmpYank()
+map <silent> sp :call YanktmpPaste_p()
+map <silent> sP :call YanktmpPaste_P()
+
+" vim-ref
+let g:ref_alc_encoding = 'utf-8'
+let g:ref_alc_start_linenumber = 44
