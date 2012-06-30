@@ -15,6 +15,7 @@ NeoBundle 'yanktmp.vim'
 NeoBundle 'git://github.com/nathanaelkane/vim-indent-guides.git'
 NeoBundle 'git://github.com/altercation/vim-colors-solarized.git'
 NeoBundle 'ref.vim'
+NeoBundle 'git://github.com/t9md/vim-chef.git'
 
 filetype plugin on
 filetype indent on
