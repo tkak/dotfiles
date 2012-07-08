@@ -1,8 +1,9 @@
 *
-*.
-!.vim/bundle
+.*
 !.vimrc
-!.vim
+!.vim/
+!.vim/vim-chef.vimrc
+!.vim/neocomplcache.vimrc
 !.zshrc
 !.tmux.conf
 !README.md
