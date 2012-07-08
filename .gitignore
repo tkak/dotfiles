@@ -1,7 +1,8 @@
-#*
-#*.
-.vim/bundle/ref.vim
-#!.vimrc
-#!.vim
-#!.zshrc
-#!.tmux.conf
+*
+*.
+!.vim/bundle
+!.vimrc
+!.vim
+!.zshrc
+!.tmux.conf
+!README.md
