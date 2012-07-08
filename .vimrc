@@ -14,7 +14,7 @@ NeoBundle 'git://github.com/Shougo/unite.vim.git'
 NeoBundle 'yanktmp.vim'
 NeoBundle 'git://github.com/nathanaelkane/vim-indent-guides.git'
 NeoBundle 'git://github.com/altercation/vim-colors-solarized.git'
-NeoBundle 'ref.vim'
+NeoBundle 'git://github.com/thinca/vim-ref.git'
 NeoBundle 'git://github.com/t9md/vim-chef.git'
 
 filetype plugin on
@@ -95,7 +95,9 @@ map <silent> sP :call YanktmpPaste_P()
 
 " vim-chef setting
 " ================
-map <M-a> :ChefFindAny
+if filereadable(expand('~/.vim/vim-chef.vimrc'))
+    source ~/.vim/vim-chef.vimrc
+endif
 
 " vim-ref
 " =======
