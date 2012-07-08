@@ -93,6 +93,10 @@ map <silent> sy :call YanktmpYank()
 map <silent> sp :call YanktmpPaste_p()
 map <silent> sP :call YanktmpPaste_P()
 
+" vim-chef setting
+" ================
+map <M-a> :ChefFindAny
+
 " vim-ref
 " =======
 let g:ref_alc_encoding = 'utf-8'
