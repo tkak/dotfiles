@@ -1,19 +1,22 @@
-# environment variable configuration
-#
-export MANPATH=/usr/local/lib:xport:$MANPATH
-export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
-export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH
-export LANG=ja_JP.UTF-8
-
 case "${OSTYPE}" in
 # Mac(Unix)
 darwin*)
-  export PYTHONPATH=/Users/tkak/sandbox/gae/bin:/usr/local/lib:$PYTHONPATH
-  source /Users/tkak/.pythonbrew/etc/bashrc
-  export WORKON_HOME=$HOME/.virtualenvs
-  source `which virtualenvwrapper.sh`
+# environment variable configuration
+#
+#  source /Users/tkak/.pythonbrew/etc/bashrc
+#  export WORKON_HOME=$HOME/.virtualenvs
+#  source `which virtualenvwrapper.sh`
+  export MANPATH=/usr/local/lib:$MANPATH
+  export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
+  export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH
+  homebrew=/usr/local/bin
+  export PATH=$homebrew:$PATH
   export LSCOLORS=gxfxcxdxbxegedabagacad
+  export LANG=ja_JP.UTF-8
   alias ls="ls -G"
+  alias tmux="tmuxx"
+  PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+  [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
   ;;  
 # linux
 linux*)
@@ -74,7 +77,6 @@ autoload colors
 colors
 case ${UID} in
 0)
-  #PROMPT="%B%{^[[31m%}%/#%{^[[m%}%b  "
   PROMPT="%n@${HOST%%.*}%% " 
   PROMPT2="%B%{[31m%}%_#%{[m%}%b "
   RPROMPT="[%~]" 
@@ -84,7 +86,7 @@ case ${UID} in
   ;;
 *)
   PROMPT="%n@${HOST%%.*}%% " 
-  PROMPT2="%{^[[31m%}%_%%%{^[[m%} "
+  PROMPT2="%{%}%_: "
   RPROMPT="[%~]" 
   SPROMPT="%r is correct? [n,y,a,e]: " 
   [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] && 
@@ -112,5 +114,3 @@ alias dsh='du -sh'
 #補完候補一覧のカラー表示
 zstyle ':completion:*' list-colors 'di=36' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm

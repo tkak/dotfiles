@@ -42,11 +42,11 @@ set expandtab
 set tabstop=2
 set shiftwidth=2
 
-inoremap {} {}<Left>
-inoremap '' ''<Left>
-inoremap "" ""<Left>
-inoremap [] []<Left>
-inoremap () ()<Left>
+inoremap { {}<Left>
+inoremap ' ''<Left>
+inoremap " ""<Left>
+inoremap [ []<Left>
+inoremap ( ()<Left>
 
 if filereadable(expand('~/.vim/neocomplcache.vimrc'))
     source ~/.vim/neocomplcache.vimrc
