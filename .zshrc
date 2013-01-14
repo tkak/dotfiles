@@ -90,7 +90,7 @@ case ${UID} in
   RPROMPT="[%~]" 
   SPROMPT="%r is correct? [n,y,a,e]: " 
   [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] && 
-    PROMPT="%{^[[37m%}${HOST%%.*} ${PROMPT}"
+    PROMPT="%n@${HOST%%.*}%% "
   ;;
 esac 
 
