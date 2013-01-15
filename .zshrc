@@ -1,11 +1,6 @@
 case "${OSTYPE}" in
 # Mac(Unix)
 darwin*)
-# environment variable configuration
-#
-#  source /Users/tkak/.pythonbrew/etc/bashrc
-#  export WORKON_HOME=$HOME/.virtualenvs
-#  source `which virtualenvwrapper.sh`
   export MANPATH=/usr/local/lib:$MANPATH
   export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
   export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH
@@ -26,33 +21,13 @@ linux*)
   ;;  
 esac
 
-# auto change directory
-#
-setopt auto_cd
-
-# auto directory pushd that you can get dirs list by cd -[tab]
-#
-setopt auto_pushd
-
-# command correct edition before each completion attempt
-#
-setopt correct
-
-# compacked complete list display
-#
-setopt list_packed
-
-# no remove postfix slash of command line
-#
-setopt noautoremoveslash
-
-# no beep sound when complete list displayed
-#
-setopt nolistbeep
-
-# autocomplete configuration (zsh standard)
-#
-autoload -U compinit
+setopt auto_cd # auto change directory
+setopt auto_pushd # auto directory pushd that you can get dirs list by cd -[tab]
+setopt correct # command correct edition before each completion attempt
+setopt list_packed # compacked complete list display
+setopt noautoremoveslash # no remove postfix slash of command line
+setopt nolistbeep # no beep sound when complete list displayed
+autoload -U compinit # autocomplete configuration (zsh standard)
 compinit
 
 # history configuration
@@ -67,48 +42,42 @@ setopt extended_history  # 履歴ファイルに時刻を記録
 #
 # set prompt
 #
-#通常のプロンプト
-#PROMPT="%n@${HOST%%.*}%%" 
-#プロンプトの右側
-#RPROMPT="[%~]" 
-#入力ミスを確認する場合に表示されるプロンプト
-#SPROMPT="%r is correct? [n,y,a,e]: " 
+_rootprompt="%n@${HOST%%.*}%(?@(・ω・)@(゜δ゜))# " 
+_prompt="%n@${HOST%%.*}%(?@(・ω・)@(゜δ゜))$ " 
+_prompt2="%{%}%_: "
+_rprompt="[%~]"
+_sprompt="%r is correct(￣q￣)? [n,y,a,e]: " 
 autoload colors
 colors
 case ${UID} in
 0)
-  PROMPT="%n@${HOST%%.*}%% " 
-  PROMPT2="%B%{[31m%}%_#%{[m%}%b "
-  RPROMPT="[%~]" 
-  SPROMPT="%B%{^[[31m%}%r is correct? [n,y,a,e]:%{^[[m%}%b "
+  PROMPT="%{$fg[white]%}$_rootprompt"
+  PROMPT2="%{$fg[white]%}$_prompt2"
+  RPROMPT="%{$fg[red]%}$_rprompt" 
+  SPROMPT="%{$fg[green]%}$_sprompt""
   [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] && 
-    PROMPT="%{^[[37m%}${HOST%%.*} ${PROMPT}"
+    PROMPT="%{$fg[blue]%}$_rootprompt"
   ;;
 *)
-  PROMPT="%n@${HOST%%.*}%% " 
-  PROMPT2="%{%}%_: "
-  RPROMPT="[%~]" 
-  SPROMPT="%r is correct? [n,y,a,e]: " 
+  PROMPT="%{$fg[white]%}$_prompt"
+  PROMPT2="%{$fg[white]%}$_prompt2"
+  RPROMPT="%{$fg[magenta]%}$_rprompt" 
+  SPROMPT="%{$fg[green]%}$_sprompt""
   [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] && 
-    PROMPT="%n@${HOST%%.*}%% "
+    PROMPT="%{$fg[cyan]%}$_prompt"
   ;;
 esac 
 
-# カッコの対応などを自動的に補完
-setopt auto_param_keys
+setopt auto_param_keys # カッコの対応などを自動的に補完
 
 # Keybind configuration (emacs like)
 #
 bindkey -e
 
-# rm -i
 alias rm='rm -i'
-# ls
 alias ll='ls -l'
 alias la='ls -a'
-# df
 alias dh='df -h'
-# du
 alias dsh='du -sh'
 
 #補完候補一覧のカラー表示
