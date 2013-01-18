@@ -42,29 +42,29 @@ setopt extended_history  # 履歴ファイルに時刻を記録
 #
 # set prompt
 #
-_rootprompt="%n@${HOST%%.*}%(?@(・ω・)@(゜δ゜))# " 
-_prompt="%n@${HOST%%.*}%(?@(・ω・)@(゜δ゜))$ " 
+autoload -U colors
+colors
+_rootprompt="%n@${HOST%%.*}%(?@(・ω・%)@(゜δ゜%))# " 
+_prompt="%n@${HOST%%.*}%(?@(・ω・%)@(゜δ゜%))$ " 
 _prompt2="%{%}%_: "
 _rprompt="[%~]"
 _sprompt="%r is correct(￣q￣)? [n,y,a,e]: " 
-autoload colors
-colors
 case ${UID} in
 0)
-  PROMPT="%{$fg[white]%}$_rootprompt"
-  PROMPT2="%{$fg[white]%}$_prompt2"
-  RPROMPT="%{$fg[red]%}$_rprompt" 
-  SPROMPT="%{$fg[green]%}$_sprompt""
+  PROMPT="%{$fg[red]%}$_rootprompt"
+  PROMPT2="%{$fg[red]%}$_prompt2"
+  RPROMPT="%{$fg[white]%}$_rprompt" 
+  SPROMPT="%{$fg[green]%}$_sprompt"
   [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] && 
-    PROMPT="%{$fg[blue]%}$_rootprompt"
+    PROMPT="%{$fg[blue]%}$_rootprompt $HOST"
   ;;
 *)
-  PROMPT="%{$fg[white]%}$_prompt"
-  PROMPT2="%{$fg[white]%}$_prompt2"
-  RPROMPT="%{$fg[magenta]%}$_rprompt" 
-  SPROMPT="%{$fg[green]%}$_sprompt""
+  PROMPT="%{$fg[magenta]%}${_prompt}"
+  PROMPT2="%{$fg[magenta]%}$_prompt2"
+  RPROMPT="%{$fg[white]%}$_rprompt" 
+  SPROMPT="%{$fg[yellow]%}$_sprompt"
   [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] && 
-    PROMPT="%{$fg[cyan]%}$_prompt"
+    PROMPT="%{$fg[cyan]%}$_prompt $HOST"
   ;;
 esac 
 

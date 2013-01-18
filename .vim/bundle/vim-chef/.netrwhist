@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_cnt =8
 let g:netrw_dirhist_1='/Users/tkak/Dropbox/dotfiles/.git'
 let g:netrw_dirhist_2='/Users/tkak/Dropbox/dotfiles'
 let g:netrw_dirhist_3='/Users/tkak/devops_toolbox/definitions'
@@ -7,3 +7,4 @@ let g:netrw_dirhist_4='/Users/tkak/devops_toolbox/definitions/MyServer'
 let g:netrw_dirhist_5='/Users/tkak/devops_toolbox/definitions'
 let g:netrw_dirhist_6='/Users/tkak/devops_toolbox/definitions/CentOS6.3_64'
 let g:netrw_dirhist_7='/Users/tkak/devops_toolbox/definitions/CentOS-6.3-x86_64'
+let g:netrw_dirhist_8='/Users/tkak/my_vagrant/chef/cookbooks/dotfiles/recipes'
