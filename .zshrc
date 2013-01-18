@@ -56,7 +56,7 @@ case ${UID} in
   RPROMPT="%{$fg[white]%}$_rprompt" 
   SPROMPT="%{$fg[green]%}$_sprompt"
   [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] && 
-    PROMPT="%{$fg[blue]%}$_rootprompt $HOST"
+    PROMPT="%{$fg[blue]%}[s]$_rootprompt"
   ;;
 *)
   PROMPT="%{$fg[magenta]%}${_prompt}"
@@ -64,7 +64,7 @@ case ${UID} in
   RPROMPT="%{$fg[white]%}$_rprompt" 
   SPROMPT="%{$fg[yellow]%}$_sprompt"
   [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] && 
-    PROMPT="%{$fg[cyan]%}$_prompt $HOST"
+    PROMPT="%{$fg[cyan]%}[s]$_prompt"
   ;;
 esac 
 
