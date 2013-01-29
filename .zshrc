@@ -44,11 +44,11 @@ setopt extended_history  # 履歴ファイルに時刻を記録
 #
 autoload -U colors
 colors
-_rootprompt="%n@${HOST%%.*}%(?@(・ω・%)@(゜δ゜%))# " 
-_prompt="%n@${HOST%%.*}%(?@(・ω・%)@(゜δ゜%))$ " 
+_rootprompt="%n@${HOST%%.*}%(?@ o @ x )# "
+_prompt="%n@${HOST%%.*}%(?@ o @ x )$ "
 _prompt2="%{%}%_: "
 _rprompt="[%~]"
-_sprompt="%r is correct(￣q￣)? [n,y,a,e]: " 
+_sprompt="%r is correct? [n,y,a,e]: " 
 case ${UID} in
 0)
   PROMPT="%{$fg[red]%}$_rootprompt"
