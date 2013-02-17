@@ -18,7 +18,7 @@ linux*)
   # ls for linux (FSF)
   export LS_COLORS='di=36:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
   alias ls="ls --color"
-  PATH=$PATH:$HOME/tools/vim73/bin:/usr/local/vim73/bin
+  PATH=$PATH:$HOME/tools/vim73/bin
   ;;  
 esac
 
@@ -36,7 +36,7 @@ export HISTFILE=~/.zsh_history
 export HISTSIZE=10000
 export SAVEHIST=10000
 setopt hist_ignore_dups  # 重複するコマンドは無視する
-setopt share_history     # コマンド履歴ファイルを共有する
+#setopt share_history     # コマンド履歴ファイルを共有する
 setopt extended_history  # 履歴ファイルに時刻を記録
 
 ## Default shell configuration
@@ -80,6 +80,7 @@ alias ll='ls -l'
 alias la='ls -a'
 alias dh='df -h'
 alias dsh='du -sh'
+alias gs='git status'
 
 #補完候補一覧のカラー表示
 zstyle ':completion:*' list-colors 'di=36' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
