@@ -5,8 +5,9 @@ darwin*)
   export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
   export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH
   homebrew=/usr/local/bin
+  rbenv=$HOME/.rbenv/bin
   phpenv=$HOME/.phpenv/bin
-  export PATH=$homebrew:$phpenv:$PATH
+  export PATH=$homebrew:$phpenv:$rbenv:$PATH
   export LSCOLORS=gxfxcxdxbxegedabagacad
   export LANG=ja_JP.UTF-8
   alias ls="ls -G"
