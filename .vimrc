@@ -8,14 +8,17 @@ if has('vim_starting')
     call neobundle#rc(expand('~/.vim/bundle/'))
 endif
 
-NeoBundle 'git://github.com/Shougo/neobundle.vim.git'
-NeoBundle 'git://github.com/Shougo/neocomplcache.git'
-NeoBundle 'git://github.com/Shougo/unite.vim.git'
+let g:neobundle_default_git_protocol='https'
+
+NeoBundle 'https://github.com/Shougo/neobundle.vim.git'
+NeoBundle 'https://github.com/Shougo/neocomplcache.git'
+NeoBundle 'https://github.com/Shougo/unite.vim.git'
 NeoBundle 'yanktmp.vim'
-NeoBundle 'git://github.com/nathanaelkane/vim-indent-guides.git'
-NeoBundle 'git://github.com/altercation/vim-colors-solarized.git'
-NeoBundle 'git://github.com/thinca/vim-ref.git'
-NeoBundle 'git://github.com/t9md/vim-chef.git'
+NeoBundle 'https://github.com/nathanaelkane/vim-indent-guides.git'
+NeoBundle 'https://github.com/altercation/vim-colors-solarized.git'
+NeoBundle 'https://github.com/thinca/vim-ref.git'
+NeoBundle 'https://github.com/t9md/vim-chef.git'
+NeoBundle 'synboo/project.vim'
 
 filetype plugin on
 filetype indent on
