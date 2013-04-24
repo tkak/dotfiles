@@ -12,7 +12,6 @@ darwin*)
   export LANG=ja_JP.UTF-8
   alias ls="ls -G"
   source ~/perl5/perlbrew/etc/bashrc
-#  alias tmux="tmuxx"
   PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
   [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
   eval "$(rbenv init - zsh)"
@@ -89,5 +88,4 @@ alias gs='git status'
 
 #補完候補一覧のカラー表示
 zstyle ':completion:*' list-colors 'di=36' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
-
 
