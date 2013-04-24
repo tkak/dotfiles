@@ -8,7 +8,7 @@ My dotfiles
 
 vim 
 ---
-## setup
+### setup
 
     $ cd $HOME/.vim/bundle
     $ git clone https://github.com/Shougo/neobundle.vim.git
@@ -17,13 +17,13 @@ vim
 
 tmux
 ----
-## setup
+### setup
 Install iTerm2  
 <http://www.iterm2.com/#/section/home>
 - Go to the iTerm Preferences -> General -> Selection 
 - Enable "Allow clipboard access to terminal apps"
 
-## tips
+### tips
 
     tmux new -s projectA -- create new session
     Ctrl-b d -- detache
@@ -38,7 +38,7 @@ Install iTerm2
 
 zsh
 ---
-## setup
+### setup
 
     $ finger $USER
     $ chsh -s `which zsh`
