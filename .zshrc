@@ -85,6 +85,7 @@ alias la='ls -a'
 alias dh='df -h'
 alias dsh='du -sh'
 alias gs='git status'
+alias b='bundle exec'
 
 #補完候補一覧のカラー表示
 zstyle ':completion:*' list-colors 'di=36' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
