@@ -7,7 +7,8 @@ darwin*)
   homebrew=/usr/local/bin
   rbenv=$HOME/.rbenv/bin
   phpenv=$HOME/.phpenv/bin
-  export PATH=$homebrew:$phpenv:$rbenv:$PATH
+  cabal=$HOME/.cabal/bin
+  export PATH=$homebrew:$phpenv:$rbenv:$cabal:$PATH
   export LSCOLORS=gxfxcxdxbxegedabagacad
   export LANG=ja_JP.UTF-8
   alias ls="ls -G"
@@ -85,7 +86,7 @@ alias la='ls -a'
 alias dh='df -h'
 alias dsh='du -sh'
 alias gs='git status'
-alias b='bundle exec'
+alias be='bundle exec'
 
 #補完候補一覧のカラー表示
 zstyle ':completion:*' list-colors 'di=36' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
