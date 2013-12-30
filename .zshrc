@@ -6,9 +6,9 @@ darwin*)
   export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH
   homebrew=/usr/local/bin
   rbenv=$HOME/.rbenv/bin
-  phpenv=$HOME/.phpenv/bin
-  cabal=$HOME/.cabal/bin
-  export PATH=$homebrew:$phpenv:$rbenv:$cabal:$PATH
+#  phpenv=$HOME/.phpenv/bin
+#  cabal=$HOME/.cabal/bin
+  export PATH=$homebrew:$rbenv:$cabal:$PATH
   export LSCOLORS=gxfxcxdxbxegedabagacad
   export LANG=ja_JP.UTF-8
   alias ls="ls -G"
