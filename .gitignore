@@ -1,9 +1,1 @@
-*
-.*
-!.vimrc
-!.vim/
-!.vim/vim-chef.vimrc
-!.vim/neocomplcache.vimrc
-!.zshrc
-!.tmux.conf
-!README.md
+.vim/
