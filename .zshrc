@@ -16,7 +16,7 @@ darwin*)
   PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
   [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
   eval "$(rbenv init - zsh)"
-  eval "$(phpenv init - zsh)"
+#  eval "$(phpenv init - zsh)"
   ;;  
 # linux
 linux*)
