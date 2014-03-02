@@ -31,6 +31,8 @@ install autoconf
 install ghc
 install haskell-platform
 install libyaml
+install libxml2
+install libxslt
 install nkf
 install openssl
 install pkg-config
