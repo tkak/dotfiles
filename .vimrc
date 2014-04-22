@@ -18,7 +18,8 @@ NeoBundle 'https://github.com/nathanaelkane/vim-indent-guides.git'
 NeoBundle 'https://github.com/altercation/vim-colors-solarized.git'
 NeoBundle 'https://github.com/thinca/vim-ref.git'
 NeoBundle 'https://github.com/t9md/vim-chef.git'
-NeoBundle 'synboo/project.vim'
+NeoBundle 'https://github.com/w0ng/vim-hybrid.git'
+NeoBundle 'kien/ctrlp.vim'
 
 filetype plugin on
 filetype indent on
@@ -67,8 +68,10 @@ set hlsearch
 " view setting
 " ============
 syntax enable
-set background=dark
-colorscheme solarized
+" set background=dark
+" colorscheme solarized
+let g:hybrid_use_iTerm_colors = 1
+colorscheme hybrid
 set number
 set ruler
 set title
