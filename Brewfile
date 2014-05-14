@@ -11,34 +11,36 @@ upgrade
 #tap homebrew/dupes
 
 # Packages
-install zsh
-install git
-install gist
-install tig
-install rmtrash
+install zsh || true
+install git || true
+install gist || true
+install tig || true
+install rmtrash || true
 #install coreutils
-install wget
-install tmux
-install proctools
-install markdown
-install tree
-install nkf
-install imagemagick
-install brew-cask
-install packer
-install apple-gcc42
-install autoconf
-install ghc
-install haskell-platform
-install libyaml
-install libxml2
-install libxslt
-install nkf
-install openssl
-install pkg-config
-install rbenv
-install readline
-install ruby-build
+install wget || true
+install tmux || true
+install proctools || true
+install markdown || true
+install tree || true
+install nkf || true
+install imagemagick || true
+install brew-cask || true
+install packer || true
+install apple-gcc42 || true
+install autoconf || true
+install ghc || true
+install haskell-platform || true
+install libyaml || true
+install libxml2 || true
+install libxslt || true
+install nkf || true
+install openssl || true
+install pkg-config || true
+install rbenv || true
+install readline || true
+install ruby-build || true
+install pyenv || true
+install pyenv-virtualenv || true
 
 # .dmg
 cask install google-chrome
@@ -46,6 +48,7 @@ cask install evernote
 cask install kobito
 cask install virtualbox
 cask install vagrant
+cask install chefdk
 
 # Remove outdated versions
 cleanup
