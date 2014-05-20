@@ -35,6 +35,7 @@ install libxml2 || true
 install libxslt || true
 install nkf || true
 install openssl || true
+install gpg2 || true
 install pkg-config || true
 install rbenv || true
 install readline || true
