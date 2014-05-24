@@ -44,3 +44,9 @@ zsh
     $ chsh -s `which zsh`
     $ finger $USER
 
+Homebrew
+--------
+
+    $ brew bundle
+
+
