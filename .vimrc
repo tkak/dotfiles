@@ -28,11 +28,6 @@ NeoBundle 'kien/ctrlp.vim'
 
 filetype plugin on
 filetype indent on
-" 挿入モード終了時に IME 状態を保存しない
-"inoremap <silent> <Esc> <Esc>
-"inoremap <silent> <C-[> <Esc>
-" 「日本語入力固定モード」切り替えキー
-"inoremap <silent> <C-j> <C-^>
 
 " basic setting
 " =============
@@ -89,7 +84,6 @@ set listchars=tab:»-,trail:-,extends:»,precedes:«,nbsp:%,eol:↲
 
 set shiftround
 set infercase
-set virtualedit=all
 set hidden
 set switchbuf=useopen
 set showmatch
