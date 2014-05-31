@@ -42,6 +42,8 @@ install readline || true
 install ruby-build || true
 install pyenv || true
 install pyenv-virtualenv || true
+install boot2docker || true
+install docker
 
 # .dmg
 cask install google-chrome
