@@ -25,7 +25,7 @@ install tree || true
 install nkf || true
 install imagemagick || true
 install brew-cask || true
-install packer || true
+install packer
 install apple-gcc42 || true
 install autoconf || true
 install ghc || true
@@ -47,7 +47,7 @@ install docker
 
 # .dmg
 cask install google-chrome
-cask install virtualbox --force
+cask install virtualbox
 cask install github
 cask install vagrant
 cask install chefdk
