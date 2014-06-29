@@ -47,7 +47,8 @@ install docker
 
 # .dmg
 cask install google-chrome
-cask install virtualbox
+cask install virtualbox --force
+cask install github
 cask install vagrant
 cask install chefdk
 
