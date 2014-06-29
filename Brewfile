@@ -47,8 +47,6 @@ install docker
 
 # .dmg
 cask install google-chrome
-cask install evernote
-cask install kobito
 cask install virtualbox
 cask install vagrant
 cask install chefdk
