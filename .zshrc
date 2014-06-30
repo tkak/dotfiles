@@ -35,7 +35,8 @@ darwin*)
   rbenv=$HOME/.rbenv/bin
 #  phpenv=$HOME/.phpenv/bin
 #  cabal=$HOME/.cabal/bin
-  export PATH=$homebrew:$rbenv:$cabal:$PATH
+  ovftool=/Applications/VMware\ OVF\ Tool
+  export PATH=$homebrew:$rbenv:$cabal:$ovftool:$PATH
   export LSCOLORS=gxfxcxdxbxegedabagacad
   export LANG=ja_JP.UTF-8
   alias ls="ls -G"
