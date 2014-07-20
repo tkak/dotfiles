@@ -36,7 +36,9 @@ darwin*)
 #  phpenv=$HOME/.phpenv/bin
 #  cabal=$HOME/.cabal/bin
   ovftool=/Applications/VMware\ OVF\ Tool
-  export PATH=$homebrew:$rbenv:$cabal:$ovftool:$PATH
+  go=/usr/local/go/bin
+  export GOPATH=$HOME/.go
+  export PATH=$homebrew:$rbenv:$cabal:$ovftool:$go:$GOPATH/bin:$PATH
   export LSCOLORS=gxfxcxdxbxegedabagacad
   export LANG=ja_JP.UTF-8
   alias ls="ls -G"
@@ -89,3 +91,13 @@ alias be='bundle exec'
 #補完候補一覧のカラー表示
 zstyle ':completion:*' list-colors 'di=36' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
 
+function peco-src () {
+    local selected_dir=$(ghq list --full-path | peco --query "$LBUFFER")
+    if [ -n "$selected_dir" ]; then
+        BUFFER="cd ${selected_dir}"
+        zle accept-line
+    fi
+    zle clear-screen
+}
+zle -N peco-src
+bindkey '^]' peco-src

@@ -42,6 +42,7 @@ set smartindent
 " =============
 set textwidth=80
 set paste
+set clipboard+=unnamed
 set expandtab
 set tabstop=2
 set shiftwidth=2
