@@ -9,10 +9,12 @@ upgrade
 #tap phinze/homebrew-cask
 #tap homebrew/binary
 #tap homebrew/dupes
+tap peco/peco
 
 # Packages
 install zsh || true
 install git || true
+install hg || true
 install gist || true
 install tig || true
 install rmtrash || true
@@ -20,6 +22,7 @@ install rmtrash || true
 install wget || true
 install tmux || true
 install proctools || true
+install peco || true
 install markdown || true
 install tree || true
 install nkf || true
@@ -47,9 +50,9 @@ install docker
 
 # .dmg
 cask install google-chrome
-cask install virtualbox
+cask install virtualbox --force
 cask install github
-cask install vagrant
+cask install vagrant --force
 cask install chefdk
 
 # Remove outdated versions
