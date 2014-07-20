@@ -3,20 +3,23 @@ My dotfiles
 
     $ ghq get tkak/dotfiles
     $ ghq look tkak/dotfiles
-    $ for dotfile in (.zshrc .vim .vimrc .tmux.conf); do ln -sf `pwd`/$dotfile ~/$dotfile; done
+    $ for dotfile in .zshrc .vim .vimrc .tmux.conf; do ln -sf `pwd`/$dotfile ~/$dotfile; done
 
-vim 
+Homebrew
+--------
+
+    $ brew bundle
+
+vim
 ---
 ### setup
 
-    $ cd $HOME/.vim/bundle
-    $ git clone https://github.com/Shougo/neobundle.vim.git
-    $ vim .vimrc
-    :NeoBundleInstall!
+    $ curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
 
 tmux
 ----
 ### setup
+
 Install iTerm2  
 <http://www.iterm2.com/#/section/home>
 - Go to the iTerm Preferences -> General -> Selection 
@@ -42,10 +45,5 @@ zsh
     $ finger $USER
     $ chsh -s `which zsh`
     $ finger $USER
-
-Homebrew
---------
-
-    $ brew bundle
 
 

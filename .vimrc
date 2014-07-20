@@ -3,21 +3,30 @@ augroup MyAutoCmd
   autocmd!
 augroup END
 
-" Neovundle setting
-" ==============
-set nocompatible
-filetype off
-
+" neobundle setting
+" =================
 if has('vim_starting')
-    set runtimepath+=~/.vim/bundle/neobundle.vim
-    call neobundle#rc(expand('~/.vim/bundle/'))
+  set nocompatible               " Be iMproved
+
+  " Required:
+  set runtimepath+=/Users/takaaki.furukawa/.vim/bundle/neobundle.vim/
 endif
 
-let g:neobundle_default_git_protocol='https'
+" Required:
+call neobundle#begin(expand('/Users/takaaki.furukawa/.vim/bundle'))
 
-NeoBundle 'https://github.com/Shougo/neobundle.vim.git'
-NeoBundle 'https://github.com/Shougo/neocomplcache.git'
-NeoBundle 'https://github.com/Shougo/unite.vim.git'
+" Let NeoBundle manage NeoBundle
+" Required:
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" My Bundles here:
+NeoBundle 'Shougo/neosnippet.vim'
+NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/neosnippet-snippets'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'yanktmp.vim'
 NeoBundle 'https://github.com/nathanaelkane/vim-indent-guides.git'
 NeoBundle 'https://github.com/altercation/vim-colors-solarized.git'
@@ -26,8 +35,20 @@ NeoBundle 'https://github.com/t9md/vim-chef.git'
 NeoBundle 'https://github.com/w0ng/vim-hybrid.git'
 NeoBundle 'kien/ctrlp.vim'
 
-filetype plugin on
-filetype indent on
+" You can specify revision/branch/tag.
+NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
+
+" Required:
+call neobundle#end()
+
+" Required:
+filetype plugin indent on
+
+" If there are uninstalled bundles found on startup,
+" this will conveniently prompt you to install them.
+NeoBundleCheck
+
+let g:neobundle_default_git_protocol='https'
 
 " basic setting
 " =============
