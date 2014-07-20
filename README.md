@@ -1,10 +1,9 @@
 My dotfiles
 ===========
 
-    $ test -d ~/git && mkdir ~/git
-    $ cd ~/git
-    $ git clone https://github.com/tkak/dotfiles.git
-    $ for dotfile in (.zshrc .vim .vimrc .tmux.conf); do ln -sf ~/git/dotfiles/$dotfile ~/$dotfile; done
+    $ ghq get tkak/dotfiles
+    $ ghq look tkak/dotfiles
+    $ for dotfile in (.zshrc .vim .vimrc .tmux.conf); do ln -sf `pwd`/$dotfile ~/$dotfile; done
 
 vim 
 ---

@@ -5,10 +5,6 @@ update
 upgrade
 
 # Add Repository
-#tap homebrew/versions
-#tap phinze/homebrew-cask
-#tap homebrew/binary
-#tap homebrew/dupes
 tap peco/peco
 
 # Packages
@@ -18,7 +14,6 @@ install hg || true
 install gist || true
 install tig || true
 install rmtrash || true
-#install coreutils
 install wget || true
 install tmux || true
 install proctools || true
@@ -54,6 +49,7 @@ cask install virtualbox --force
 cask install github
 cask install vagrant --force
 cask install chefdk
+cask install limechat
 
 # Remove outdated versions
 cleanup
