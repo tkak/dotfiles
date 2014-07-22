@@ -47,9 +47,10 @@ install docker
 cask install google-chrome
 cask install virtualbox --force
 cask install github
-cask install vagrant --force
+cask install vagrant
 cask install chefdk
 cask install limechat
+cask install dash
 
 # Remove outdated versions
 cleanup
