@@ -34,7 +34,9 @@ NeoBundle 'https://github.com/thinca/vim-ref.git'
 NeoBundle 'https://github.com/t9md/vim-chef.git'
 NeoBundle 'https://github.com/w0ng/vim-hybrid.git'
 NeoBundle 'kien/ctrlp.vim'
-NeoBundle 'rizzatti/dash.vim'
+if system('uname -s') == "Darwin\n"
+    NeoBundle 'rizzatti/dash.vim'
+end
 
 " You can specify revision/branch/tag.
 NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
