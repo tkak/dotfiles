@@ -7,6 +7,7 @@ upgrade
 # Add Repository
 tap peco/peco
 tap homebrew/dupes
+tap homebrew/binary
 
 # Packages
 install apple-gcc42 || true
@@ -22,13 +23,15 @@ install grep || true
 install haskell-platform || true
 install hg || true
 install imagemagick || true
+install jq || true
 install libyaml || true
 install libxml2 || true
 install libxslt || true
+install lua || true
 install markdown || true
 install nkf || true
 install openssl || true
-install packer
+install packer || true
 install peco || true
 install pkg-config || true
 install proctools || true
@@ -42,6 +45,7 @@ install sqlite || true
 install tig || true
 install tmux || true
 install tree || true
+install vim --with-python --with-ruby --with-perl --with-lua
 install wget || true
 install zsh || true
 
