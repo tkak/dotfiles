@@ -46,4 +46,8 @@ zsh
     $ chsh -s `which zsh`
     $ finger $USER
 
+References
+----------
+
+* [Vim Bootstrap](http://vim-bootstrap.com/)
 

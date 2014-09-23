@@ -85,6 +85,22 @@ NeoBundle 'vim-perl/vim-perl'
 NeoBundle 'c9s/perlomni.vim'
 
 
+"" My Bundles here:
+NeoBundle 'Shougo/neosnippet.vim'
+NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/neosnippet-snippets'
+NeoBundle 'yanktmp.vim'
+NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'thinca/vim-ref'
+NeoBundle 't9md/vim-chef'
+NeoBundle 'w0ng/vim-hybrid'
+NeoBundle 'kien/ctrlp.vim'
+if system('uname -s') == "Darwin\n"
+    NeoBundle 'rizzatti/dash.vim'
+end
+
 
 call neobundle#end()
 

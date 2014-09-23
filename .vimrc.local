@@ -1,21 +1,3 @@
-" My Bundles here:
-NeoBundle 'Shougo/neosnippet.vim'
-NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'yanktmp.vim'
-NeoBundle 'nathanaelkane/vim-indent-guides'
-NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'thinca/vim-ref'
-NeoBundle 't9md/vim-chef'
-NeoBundle 'w0ng/vim-hybrid'
-NeoBundle 'kien/ctrlp.vim'
-if system('uname -s') == "Darwin\n"
-    NeoBundle 'rizzatti/dash.vim'
-end
-
-let g:neobundle_default_git_protocol='https'
-
 " basic setting
 " =============
 set visualbell
@@ -23,7 +5,9 @@ set showcmd
 set autoindent
 set smartindent
 
-if filereadable(expand('~/.vim/neocomplcache.vimrc'))
+let g:neobundle_default_git_protocol='https'
+
+if filereadable(expand("~/.vim/neocomplcache.vimrc"))
     source ~/.vim/neocomplcache.vimrc
 endif
 
