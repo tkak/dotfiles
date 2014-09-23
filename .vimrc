@@ -3,31 +3,56 @@ augroup MyAutoCmd
   autocmd!
 augroup END
 
-" Neovundle setting
-" ==============
-set nocompatible
-filetype off
-
+" neobundle setting
+" =================
 if has('vim_starting')
-    set runtimepath+=~/.vim/bundle/neobundle.vim
-    call neobundle#rc(expand('~/.vim/bundle/'))
+  set nocompatible               " Be iMproved
+
+  " Required:
+  set runtimepath+=/Users/takaaki.furukawa/.vim/bundle/neobundle.vim/
 endif
 
-let g:neobundle_default_git_protocol='https'
+" Required:
+call neobundle#begin(expand('/Users/takaaki.furukawa/.vim/bundle'))
 
-NeoBundle 'https://github.com/Shougo/neobundle.vim.git'
-NeoBundle 'https://github.com/Shougo/neocomplcache.git'
-NeoBundle 'https://github.com/Shougo/unite.vim.git'
-NeoBundle 'yanktmp.vim'
-NeoBundle 'https://github.com/nathanaelkane/vim-indent-guides.git'
-NeoBundle 'https://github.com/altercation/vim-colors-solarized.git'
-NeoBundle 'https://github.com/thinca/vim-ref.git'
-NeoBundle 'https://github.com/t9md/vim-chef.git'
-NeoBundle 'https://github.com/w0ng/vim-hybrid.git'
+" Let NeoBundle manage NeoBundle
+" Required:
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" My Bundles here:
+NeoBundle 'Shougo/neosnippet.vim'
+NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/neosnippet-snippets'
+NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'flazz/vim-colorschemes'
+NeoBundle 'yanktmp.vim'
+NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'thinca/vim-ref'
+NeoBundle 't9md/vim-chef'
+NeoBundle 'w0ng/vim-hybrid'
+NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'scrooloose/syntastic'
+if system('uname -s') == "Darwin\n"
+    NeoBundle 'rizzatti/dash.vim'
+end
 
-filetype plugin on
-filetype indent on
+" You can specify revision/branch/tag.
+NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
+
+" Required:
+call neobundle#end()
+
+" Required:
+filetype plugin indent on
+
+" If there are uninstalled bundles found on startup,
+" this will conveniently prompt you to install them.
+NeoBundleCheck
+
+let g:neobundle_default_git_protocol='https'
 
 " basic setting
 " =============
@@ -37,20 +62,6 @@ set backspace=indent,eol,start
 set showcmd
 set autoindent
 set smartindent
-
-" input setting
-" =============
-set textwidth=80
-set paste
-set expandtab
-set tabstop=2
-set shiftwidth=2
-
-inoremap { {}<Left>
-inoremap ' ''<Left>
-inoremap " ""<Left>
-inoremap [ []<Left>
-inoremap ( ()<Left>
 
 if filereadable(expand('~/.vim/neocomplcache.vimrc'))
     source ~/.vim/neocomplcache.vimrc
@@ -80,7 +91,7 @@ set ruler
 set title
 set t_vb=
 set novisualbell
-set listchars=tab:»-,trail:-,extends:»,precedes:«,nbsp:%,eol:↲
+set listchars=tab:»-,trail:-,extends:»,precedes:«,nbsp:%,eol:↵
 
 set shiftround
 set infercase
@@ -93,7 +104,7 @@ set matchpairs& matchpairs+=<:>
 set backspace=indent,eol,start
 
 if has('unnamedplus')
-    set clipboard& clipboard+=unnamedplus,unnamed 
+    set clipboard& clipboard+=unnamedplus,unnamed
 else
     set clipboard& clipboard+=unnamed
 endif
@@ -102,11 +113,26 @@ set nowritebackup
 set nobackup
 set noswapfile
 
+" input setting
+" =============
+set textwidth=80
+set paste
+set clipboard+=unnamed
+set expandtab
+set tabstop=2
+set shiftwidth=2
+
+imap { {}<Left>
+imap ' ''<Left>
+imap " ""<Left>
+imap [ []<Left>
+imap ( ()<Left>
+
 " indent-guide
 " ============
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_color_change_percent = 20
-let g:indent_guides_guide_size = 1 
+let g:indent_guides_guide_size = 1
 let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
@@ -117,7 +143,8 @@ augroup templates
     autocmd!
     autocmd BufNewFile *.sh 0r ~/.vim/templates/sh.txt
     autocmd BufNewFile *.py 0r ~/.vim/templates/py.txt
-    autocmd BufNewFile *.{sh\|py} %substitute#__DATE__#\=strftime('%Y-%m-%d')#ge
+    autocmd BufNewFile *.rb 0r ~/.vim/templates/rb.txt
+    autocmd BufNewFile *.{sh\|py\|rb} %substitute#__DATE__#\=strftime('%Y-%m-%d')#ge
 augroup END
 
 " keymap setting
@@ -158,4 +185,7 @@ endif
 let g:ref_alc_encoding = 'utf-8'
 let g:ref_alc_start_linenumber = 44
 
+" syntastic checker
+" =================
+let g:syntastic_ruby_checkers = ['rubocop']
 
