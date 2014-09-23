@@ -18,6 +18,7 @@ install docker
 install ghc || true
 install gist || true
 install git || true
+install go || true
 install gpg2 || true
 install grep || true
 install haskell-platform || true
