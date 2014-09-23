@@ -1,0 +1,62 @@
+" My Bundles here:
+NeoBundle 'Shougo/neosnippet.vim'
+NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/neosnippet-snippets'
+NeoBundle 'yanktmp.vim'
+NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'thinca/vim-ref'
+NeoBundle 't9md/vim-chef'
+NeoBundle 'w0ng/vim-hybrid'
+NeoBundle 'kien/ctrlp.vim'
+if system('uname -s') == "Darwin\n"
+    NeoBundle 'rizzatti/dash.vim'
+end
+
+let g:neobundle_default_git_protocol='https'
+
+" basic setting
+" =============
+set visualbell
+set showcmd
+set autoindent
+set smartindent
+
+if filereadable(expand('~/.vim/neocomplcache.vimrc'))
+    source ~/.vim/neocomplcache.vimrc
+endif
+
+" indent-guide
+" ============
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_color_change_percent = 20
+let g:indent_guides_guide_size = 1
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
+
+" template
+" ========
+augroup templates
+    autocmd!
+    autocmd BufNewFile *.sh 0r ~/.vim/templates/sh.txt
+    autocmd BufNewFile *.py 0r ~/.vim/templates/py.txt
+    autocmd BufNewFile *.rb 0r ~/.vim/templates/rb.txt
+    autocmd BufNewFile *.{sh\|py\|rb} %substitute#__DATE__#\=strftime('%Y-%m-%d')#ge
+augroup END
+
+" vim-chef setting
+" ================
+if filereadable(expand('~/.vim/vim-chef.vimrc'))
+    source ~/.vim/vim-chef.vimrc
+endif
+
+" vim-ref
+" =======
+let g:ref_alc_encoding = 'utf-8'
+let g:ref_alc_start_linenumber = 44
+
+" syntastic checker
+" =================
+let g:syntastic_ruby_checkers = ['rubocop']

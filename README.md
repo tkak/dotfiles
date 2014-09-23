@@ -3,7 +3,7 @@ My dotfiles
 
     $ ghq get tkak/dotfiles
     $ ghq look tkak/dotfiles
-    $ for dotfile in .zshrc .vim .vimrc .tmux.conf; do ln -sf `pwd`/$dotfile ~/$dotfile; done
+    $ for dotfile in .zshrc .vim .vimrc .vimrc.local .tmux.conf; do ln -sf `pwd`/$dotfile ~/$dotfile; done
 
 Homebrew
 --------
